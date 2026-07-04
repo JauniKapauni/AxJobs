@@ -9,3 +9,7 @@ load: STARTUP
 
 authors: [ JauniKapauni ]
 website: https://github.com/JauniKapauni
+
+commands:
+  jobs:
+    usage: /jobs <join|leave|list> <job>

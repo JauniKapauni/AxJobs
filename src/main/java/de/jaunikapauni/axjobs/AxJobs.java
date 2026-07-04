@@ -1,6 +1,11 @@
 package de.jaunikapauni.axjobs;
 
-import de.jaunikapauni.axjobs.manager.DatabaseManager;import de.jaunikapauni.axjobs.manager.PlayerManager;import org.bukkit.Bukkit;import org.bukkit.plugin.java.JavaPlugin;
+import de.jaunikapauni.axjobs.commands.JobsCommand;
+import de.jaunikapauni.axjobs.commands.JobsTabCompleter;
+import de.jaunikapauni.axjobs.manager.DatabaseManager;
+import de.jaunikapauni.axjobs.manager.PlayerManager;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AxJobs extends JavaPlugin {
     DatabaseManager databaseManager;
@@ -26,6 +31,8 @@ public final class AxJobs extends JavaPlugin {
         } catch (Exception e){
             throw new RuntimeException(e);
         }
+        getCommand("jobs").setExecutor(new JobsCommand(this));
+        getCommand("jobs").setTabCompleter(new JobsTabCompleter(this));
     }
 
     @Override
