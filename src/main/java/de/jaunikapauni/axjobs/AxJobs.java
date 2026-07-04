@@ -1,11 +1,15 @@
 package de.jaunikapauni.axjobs;
 
-import de.jaunikapauni.axjobs.manager.DatabaseManager;import org.bukkit.Bukkit;import org.bukkit.plugin.java.JavaPlugin;
+import de.jaunikapauni.axjobs.manager.DatabaseManager;import de.jaunikapauni.axjobs.manager.PlayerManager;import org.bukkit.Bukkit;import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AxJobs extends JavaPlugin {
     DatabaseManager databaseManager;
     public DatabaseManager getDatabaseManager(){
         return databaseManager;
+    }
+    PlayerManager playerManager;
+    public PlayerManager getPlayerManager(){
+        return playerManager;
     }
 
     @Override
@@ -13,6 +17,7 @@ public final class AxJobs extends JavaPlugin {
         // Plugin startup logic
         saveDefaultConfig();
         try{
+            playerManager = new PlayerManager(this);
             databaseManager = new DatabaseManager(this);
             if(databaseManager.initDatabaseTable1() == false){
                 getLogger().severe("Error creating table");
