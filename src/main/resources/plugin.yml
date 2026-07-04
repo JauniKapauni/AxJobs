@@ -1,0 +1,11 @@
+name: AxJobs
+description: $description
+prefix: AxJobs
+version: '${version}'
+
+main: de.jaunikapauni.axjobs.AxJobs
+api-version: '26.1.2'
+load: STARTUP
+
+authors: [ JauniKapauni ]
+website: https://github.com/JauniKapauni
