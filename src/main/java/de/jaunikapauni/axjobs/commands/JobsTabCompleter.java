@@ -21,10 +21,10 @@ public class JobsTabCompleter implements TabCompleter {
             return List.of("join", "leave", "list");
         }
         if(args.length == 2 && (args[0].equalsIgnoreCase("join") || args[0].equalsIgnoreCase("leave"))){
-            if(reference.getConfig().getConfigurationSection("jobs") == null){
+            if(reference.getJobsConfig().getKeys(false).isEmpty()){
                 return List.of();
             }
-            return new ArrayList<>(reference.getConfig().getConfigurationSection("jobs").getKeys(false));
+            return new ArrayList<>(reference.getJobsConfig().getKeys(false));
         }
         return List.of();
     }

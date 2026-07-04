@@ -12,6 +12,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
     implementation("com.zaxxer:HikariCP:7.0.2")
+    compileOnly(files("libs/AxEconomy-1.3.7-all.jar"))
 }
 
 java {

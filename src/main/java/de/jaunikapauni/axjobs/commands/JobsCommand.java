@@ -34,7 +34,7 @@ public class JobsCommand implements CommandExecutor {
                     return false;
                 }
                 String job = args[1].toLowerCase();
-                if(!reference.getConfig().contains("jobs." + job)){
+                if(!reference.getJobsConfig().contains(job)){
                     p.sendMessage(ChatColor.RED + "This job does not exist!");
                     return true;
                 }
