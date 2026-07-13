@@ -6,20 +6,21 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 
 import java.util.List;
 import java.util.UUID;
 
-public class BlockBreakListener implements Listener {
+public class BlockPlaceListener implements Listener {
+
     AxJobs reference;
 
-    public BlockBreakListener(AxJobs reference) {
+    public BlockPlaceListener(AxJobs reference) {
         this.reference = reference;
     }
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent e) {
+    public void onBlockPlace(BlockPlaceEvent e) {
         Player p = e.getPlayer();
         UUID uuid = p.getUniqueId();
         Material material = e.getBlock().getType();
@@ -33,7 +34,7 @@ public class BlockBreakListener implements Listener {
             if (!reference.getJobsConfig().contains(job)) {
                 continue;
             }
-            String path = job + "." + "break" + "." + material.name();
+            String path = job + "." + "place" + "." + material.name();
             if (reference.getJobsConfig().contains(path)) {
                 totalPay += reference.getJobsConfig().getDouble(path);
             }

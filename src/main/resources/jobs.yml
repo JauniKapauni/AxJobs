@@ -4,3 +4,6 @@ miner:
 woodcutter:
   break:
     OAK_LOG: 0.96
+builder:
+  place:
+    OAK_LOG: 0.96
