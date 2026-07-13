@@ -90,6 +90,27 @@ woodcutter:
     BAMBOO_SAPLING: 0.46
     WARPED_FUNGUS: 0.46
     CRIMSON_FUNGUS: 0.46
+digger:
+  break:
+    GRASS_BLOCK: 0.13
+    PODZOL: 0.13
+    MYCELIUM: 0.13
+    DIRT_PATH: 0.13
+    DIRT: 0.13
+    COARSE_DIRT: 0.13
+    ROOTED_DIRT: 0.13
+    FARMLAND: 0.13
+    MUD: 0.13
+    MANGROVE_ROOTS: 0.13
+
+    CLAY: 0.13
+    GRAVEL: 0.13
+    SUSPICIOUS_GRAVEL: 0.13
+    SAND: 0.13
+    RED_SAND: 0.13
+    SUSPICIOUS_SAND: 0.13
+    SNOW_BLOCK: 0.13
+    SNOW: 0.13
 builder:
   place:
     OAK_LOG: 0.96
