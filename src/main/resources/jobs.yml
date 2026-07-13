@@ -7,3 +7,6 @@ woodcutter:
 builder:
   place:
     OAK_LOG: 0.96
+hunter:
+  kill:
+    CREEPER: 2.85

@@ -6,6 +6,7 @@ import de.jaunikapauni.axjobs.commands.JobsCommand;
 import de.jaunikapauni.axjobs.commands.JobsTabCompleter;
 import de.jaunikapauni.axjobs.listener.BlockBreakListener;
 import de.jaunikapauni.axjobs.listener.BlockPlaceListener;
+import de.jaunikapauni.axjobs.listener.EntityDeathListener;
 import de.jaunikapauni.axjobs.manager.DatabaseManager;
 import de.jaunikapauni.axjobs.manager.PlayerManager;
 import org.bukkit.Bukkit;
@@ -62,6 +63,7 @@ public final class AxJobs extends JavaPlugin {
         }
         getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
         getServer().getPluginManager().registerEvents(new BlockPlaceListener(this), this);
+        getServer().getPluginManager().registerEvents(new EntityDeathListener(this), this);
     }
 
     @Override
