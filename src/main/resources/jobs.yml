@@ -1,2 +1,6 @@
 miner:
-  COAL_ORE: 5
+  break:
+    COAL_ORE: 1.14
+woodcutter:
+  break:
+    OAK_LOG: 0.96

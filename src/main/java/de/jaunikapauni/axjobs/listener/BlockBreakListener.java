@@ -29,9 +29,14 @@ public class BlockBreakListener implements Listener {
         }
         double totalPay = 0;
         for(String job : jobs){
-            String path = job + "." + material.name();
-            if(reference.getJobsConfig().contains(path)){
-                totalPay += reference.getJobsConfig().getDouble(path);
+            if(!reference.getJobsConfig().contains(job)){
+                continue;
+            }
+            for(String action : reference.getJobsConfig().getConfigurationSection(job).getKeys(false)){
+                String path = job + "." + action + "." + material.name();
+                if(reference.getJobsConfig().contains(path)){
+                    totalPay += reference.getJobsConfig().getDouble(path);
+                }
             }
         }
         if(totalPay > 0){
