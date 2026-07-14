@@ -66,6 +66,7 @@ public final class AxJobs extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FurnaceSmeltListener(this), this);
         getServer().getPluginManager().registerEvents(new EntityBreedListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerShearEntityListener(this), this);
+        getServer().getPluginManager().registerEvents(new BrewListener(this), this);
     }
 
     @Override
