@@ -300,6 +300,23 @@ farmer:
     TRADER_LLAMA: 2.85
     TURTLE: 2.85
     WOLF: 2.85
+  shear:
+    RED: 1.71
+    ORANGE: 1.71
+    YELLOW: 1.71
+    GREEN: 1.71
+    BLUE: 1.71
+    LIGHT_BLUE: 1.71
+    MAGENTA: 1.71
+    PINK: 1.71
+    WHITE: 1.71
+    LIGHT_GRAY: 1.71
+    BLACK: 1.71
+    BROWN: 1.71
+    PURPLE: 1.71
+    CYAN: 1.71
+    GRAY: 1.71
+    LIME: 1.71
 builder:
   place:
     OAK_LOG: 0.96
