@@ -64,6 +64,7 @@ public final class AxJobs extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityDeathListener(this), this);
         getServer().getPluginManager().registerEvents(new CraftItemListener(this), this);
         getServer().getPluginManager().registerEvents(new FurnaceSmeltListener(this), this);
+        getServer().getPluginManager().registerEvents(new EntityBreedListener(this), this);
     }
 
     @Override

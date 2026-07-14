@@ -273,6 +273,33 @@ farmer:
     COOKED_RABBIT: 0.57
     COOKED_COD: 0.57
     COOKED_SALMON: 0.57
+  breed:
+    ARMADILLO: 2.85
+    AXOLOTL: 2.85
+    BEE: 2.85
+    CAMEL: 2.85
+    CAT: 2.85
+    CHICKEN: 2.85
+    COW: 2.85
+    DONKEY: 2.85
+    FOX: 2.85
+    FROG: 2.85
+    GOAT: 2.85
+    HOGLIN: 2.85
+    HORSE: 2.85
+    LLAMA: 2.85
+    MOOSHROOM: 2.85
+    MULE: 2.85
+    OCELOT: 2.85
+    PANDA: 2.85
+    PIG: 2.85
+    RABBIT: 2.85
+    SHEEP: 2.85
+    SNIFFER: 2.85
+    STRIDER: 2.85
+    TRADER_LLAMA: 2.85
+    TURTLE: 2.85
+    WOLF: 2.85
 builder:
   place:
     OAK_LOG: 0.96
