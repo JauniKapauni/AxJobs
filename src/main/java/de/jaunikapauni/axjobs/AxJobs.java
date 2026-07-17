@@ -67,6 +67,8 @@ public final class AxJobs extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityBreedListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerShearEntityListener(this), this);
         getServer().getPluginManager().registerEvents(new BrewListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
         getServer().getScheduler().runTaskTimer(this, () -> {
             playerManager.save();
         }, 100, 100);
