@@ -24,7 +24,7 @@ public class JobsTabCompleter implements TabCompleter {
             if(reference.getJobsConfig().getKeys(false).isEmpty()){
                 return List.of();
             }
-            return new ArrayList<>(reference.getJobsConfig().getKeys(false));
+            return reference.getJobs();
         }
         return List.of();
     }

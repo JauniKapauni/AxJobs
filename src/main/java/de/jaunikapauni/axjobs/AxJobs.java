@@ -13,6 +13,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class AxJobs extends JavaPlugin {
     DatabaseManager databaseManager;
@@ -32,6 +34,10 @@ public final class AxJobs extends JavaPlugin {
     public FileConfiguration getJobsConfig(){
         return jobsConfig;
     }
+    List<String> jobs;
+    public List<String> getJobs(){
+        return jobs;
+    }
 
     @Override
     public void onEnable() {
@@ -50,6 +56,7 @@ public final class AxJobs extends JavaPlugin {
         } catch (Exception e){
             throw new RuntimeException(e);
         }
+        jobs = new ArrayList<>(jobsConfig.getKeys(false));
         getCommand("jobs").setExecutor(new JobsCommand(this));
         getCommand("jobs").setTabCompleter(new JobsTabCompleter(this));
         if(Bukkit.getPluginManager().getPlugin("AxEconomy") != null){
