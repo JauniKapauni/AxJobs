@@ -21,6 +21,9 @@ public class EntityBreedListener implements Listener {
     @EventHandler
     public void onBreed(EntityBreedEvent e){
         Player p = e.getBreeder().getKiller();
+        if(p == null){
+            return;
+        }
         UUID uuid = p.getUniqueId();
         Entity entity = e.getEntity();
         List<String> jobs = reference.getPlayerManager().getJobs(uuid);

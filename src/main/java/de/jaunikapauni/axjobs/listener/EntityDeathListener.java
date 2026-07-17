@@ -22,6 +22,9 @@ public class EntityDeathListener implements Listener {
     @EventHandler
     public void onEntityDeath(EntityDeathEvent e){
         Player p = e.getEntity().getKiller();
+        if(p == null){
+            return;
+        }
         UUID uuid = p.getUniqueId();
         Entity entity = e.getEntity();
 
