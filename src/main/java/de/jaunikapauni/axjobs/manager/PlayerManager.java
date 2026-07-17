@@ -15,6 +15,22 @@ public class PlayerManager {
     }
 
     Map<UUID, List<String>> cache = new HashMap<>();
+    Map<UUID, Double> money = new HashMap<>();
+
+    public void addReward(UUID uuid, double amount){
+        if(!money.containsKey(uuid)){
+            money.put(uuid, amount);
+        } else {
+            money.put(uuid, money.get(uuid) + amount);
+        }
+    }
+
+    public void save(){
+        for(Map.Entry<UUID, Double> entry : money.entrySet()){
+            reference.getEconomyAPI().deposit(entry.getKey(), entry.getValue());
+        }
+        money.clear();
+    }
 
     public void loadPlayer(UUID uuid){
         List<String> jobs = new ArrayList<>();

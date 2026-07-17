@@ -43,7 +43,7 @@ public class EntityDeathListener implements Listener {
             }
         }
         if (totalPay > 0) {
-            reference.getEconomyAPI().deposit(uuid, totalPay);
+            reference.getPlayerManager().addReward(uuid, totalPay);
             p.sendMessage(ChatColor.GREEN + "+" + totalPay);
         }
     }
