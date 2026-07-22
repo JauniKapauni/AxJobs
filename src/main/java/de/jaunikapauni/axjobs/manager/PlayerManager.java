@@ -18,11 +18,10 @@ public class PlayerManager {
     Map<UUID, Double> money = new HashMap<>();
 
     public void addReward(UUID uuid, double amount){
-        if(!money.containsKey(uuid)){
-            money.put(uuid, amount);
-        } else {
-            money.put(uuid, money.get(uuid) + amount);
+        if(amount <= 0){
+            return;
         }
+        money.put(uuid, money.getOrDefault(uuid, 0.0) + amount);
     }
 
     public void save(){
@@ -54,7 +53,7 @@ public class PlayerManager {
 
     public void addJob(UUID uuid, String job){
         try(Connection conn = reference.getDatabaseManager().getConnection()){
-            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO jobs(uuid, job) VALUES (?, ?)")){
+            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO jobs (uuid, job) VALUES (?, ?)")){
                 ps.setString(1, uuid.toString());
                 ps.setString(2, job);
                 ps.executeUpdate();
@@ -62,10 +61,7 @@ public class PlayerManager {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        if(!cache.containsKey(uuid)){
-            cache.put(uuid, new ArrayList<>());
-        }
-        cache.get(uuid).add(job);
+        cache.computeIfAbsent(uuid, k -> new ArrayList<>()).add(job);
     }
 
     public void removeJob(UUID uuid, String job){
@@ -78,7 +74,8 @@ public class PlayerManager {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        cache.getOrDefault(uuid, new ArrayList<>()).remove(job);
+        List<String> jobs = cache.getOrDefault(uuid, new ArrayList<>());
+        jobs.remove(job);
     }
 
     public List<String> getJobs(UUID uuid){
